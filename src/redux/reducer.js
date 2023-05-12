@@ -22,9 +22,21 @@ const todoSlicer = createSlice({
         }
         return todo;
       });
+    },
+    completedTodos: (state, action) => {
+      return state.map((todo) => {
+        if (todo.id === action.payload) {
+          return {
+            ...todo,
+            completed: true
+          };
+        }
+        return todo;
+      });
     }
   }
 });
 
-export const { addTodos, removeTodos, updateTodos } = todoSlicer.actions;
+export const { addTodos, removeTodos, updateTodos, completedTodos } =
+  todoSlicer.actions;
 export const todos = todoSlicer.reducer;
