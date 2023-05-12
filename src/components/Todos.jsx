@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodos } from "../redux/reducer";
+import { addTodos, removeTodos } from "../redux/reducer";
 
 const Todos = () => {
   const todos = useSelector((state) => state);
@@ -36,7 +36,10 @@ const Todos = () => {
       <br />
       <ul>
         {todos.map(({ id, item }) => (
-          <li key={id}>{item}</li>
+          <li key={id}>
+            {item}
+            <button onClick={() => dispatch(removeTodos(id))}>Delete</button>
+          </li>
         ))}
       </ul>
     </div>
