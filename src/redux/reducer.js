@@ -11,9 +11,20 @@ const todoSlicer = createSlice({
     },
     removeTodos: (state, action) => {
       return state.filter((item) => item.id !== action.payload);
+    },
+    updateTodos: (state, action) => {
+      return state.map((todo) => {
+        if (todo.id === action.payload.id) {
+          return {
+            ...todo,
+            item: action.payload.item
+          };
+        }
+        return todo;
+      });
     }
   }
 });
 
-export const { addTodos, removeTodos } = todoSlicer.actions;
+export const { addTodos, removeTodos, updateTodos } = todoSlicer.actions;
 export const todos = todoSlicer.reducer;
