@@ -18,16 +18,30 @@ const TodoItem = ({ id, item }) => {
   };
 
   return (
-    <li key={id}>
+    <li key={id} className="card">
       <textarea
         ref={inputRef}
         disabled={inputRef}
         defaultValue={item}
-        onChange={(e) => update(id, inputRef.current.value, e)}
+        onKeyPress={(e) => update(id, inputRef.current.value, e)}
       />
-      <button onClick={() => changeFocus()}>Edit</button>
-      <button onClick={() => dispatch(completedTodos(id))}>Complete</button>
-      <button onClick={() => dispatch(removeTodos(id))}>Delete</button>
+      <div className="li-btns">
+        <button className="li-btn edit" onClick={() => changeFocus()}>
+          Edit
+        </button>
+        <button
+          className="li-btn completed"
+          onClick={() => dispatch(completedTodos(id))}
+        >
+          Complete
+        </button>
+        <button
+          className="li-btn delete"
+          onClick={() => dispatch(removeTodos(id))}
+        >
+          Delete
+        </button>
+      </div>
     </li>
   );
 };

@@ -8,4 +8,127 @@
 html,
 body {
   font-family: "Varela Round", sans-serif;
+  background-color: whitesmoke;
+}
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+.app h1 {
+  margin-bottom: 2rem;
+  color: rgb(0, 81, 255);
+}
+.addTodos {
+  display: flex;
+  width: 50%;
+}
+.todo-input {
+  border: 1px solid rgb(0, 81, 255);
+  padding: 0.75rem;
+  width: 100%;
+  border-radius: 2rem;
+}
+.add-btn {
+  display: flex;
+  background-color: rgb(0, 81, 255);
+  color: white;
+  border-radius: 50%;
+  margin-left: 1rem;
+  border: none;
+}
+.todos {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  margin-top: 2rem;
+}
+.btns {
+  display: flex;
+  justify-content: space-around;
+}
+.btn {
+  padding: 0.75rem;
+  border-radius: 10rem;
+  color: white;
+  border: none;
+  font-size: larger;
+}
+.active {
+  background-color: green;
+}
+.active:hover,
+.active:focus {
+  background-color: rgb(1, 78, 1);
+}
+.completed {
+  background-color: blue;
+}
+.completed:hover,
+.completed:focus {
+  background-color: rgb(0, 0, 148);
+}
+.all {
+  background-color: orange;
+}
+.all:hover,
+.all:focus {
+  background-color: rgb(173, 113, 0);
+}
+.card {
+  width: 50%;
+  padding-block: 3rem;
+  padding-inline: 2rem;
+  list-style: none;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 2rem;
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.1);
+}
+.card textarea {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem;
+  color: black;
+  font-size: large;
+  font-weight: 500;
+  text-align: center;
+}
+.li-btns {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.li-btn {
+  padding: 1rem;
+  border-radius: 2rem;
+  font-size: medium;
+  color: white;
+  border: none;
+  margin-right: 1rem;
+}
+.edit {
+  background-color: yellowgreen;
+}
+.edit:hover,
+.edit:focus {
+  background-color: rgb(116, 155, 39);
+}
+.delete {
+  background-color: brown;
+}
+.delete:hover,
+.delete:focus {
+  background-color: rgb(109, 28, 28);
+}
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
